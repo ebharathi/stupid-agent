@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+langchain
+langchain-openai
+ddgs
+python-dotenv
+redis
+requests
+beautifulsoup4
+urllib3
