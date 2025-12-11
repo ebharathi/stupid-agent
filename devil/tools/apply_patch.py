@@ -1,14 +1,10 @@
 from typing import Optional
-#!/usr/bin/env python3
-"""
-Patch application tool.
-"""
-
-import sys
 import subprocess
 import tempfile
 import os
+from utils.logger import log_tool_call
 
+@log_tool_call
 def apply_patch(diff_content: str, target_file: Optional[str] = None) -> str:
     """
     Apply unified diff patch to file.
@@ -53,15 +49,3 @@ def apply_patch(diff_content: str, target_file: Optional[str] = None) -> str:
         return "Error: 'patch' command not found. Install patch utility: sudo apt-get install patch"
     except Exception as e:
         return f"Error applying patch: {str(e)}"
-
-if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python apply_patch.py <diff_content> [target_file]")
-        print("Note: Diff content should be provided as a single argument")
-        sys.exit(1)
-    
-    diff_content = sys.argv[1]
-    target_file = sys.argv[2] if len(sys.argv) > 2 else None
-    
-    result = apply_patch(diff_content, target_file)
-    print(result)

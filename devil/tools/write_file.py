@@ -1,12 +1,7 @@
-#!/usr/bin/env python3
-"""
-File writing tool.
-"""
-
-import sys
 import os
-from typing import Optional
+from utils.logger import log_tool_call
 
+@log_tool_call
 def write_file(file_path: str, content: str, append: bool = False) -> str:
     """
     Write content to file.
@@ -35,16 +30,3 @@ def write_file(file_path: str, content: str, append: bool = False) -> str:
         return f"Error: Permission denied for '{file_path}'"
     except Exception as e:
         return f"Error writing file: {str(e)}"
-
-if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        print("Usage: python write_file.py <file_path> <content> [--append]")
-        print("Note: Content should be provided as a single argument")
-        sys.exit(1)
-    
-    file_path = sys.argv[1]
-    content = sys.argv[2]
-    append = len(sys.argv) > 3 and sys.argv[3] == "--append"
-    
-    result = write_file(file_path, content, append)
-    print(result)

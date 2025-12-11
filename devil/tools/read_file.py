@@ -1,11 +1,7 @@
-#!/usr/bin/env python3
-"""
-File reading tool with line range support.
-"""
-
-import sys
 from typing import Optional
+from utils.logger import log_tool_call
 
+@log_tool_call
 def read_file(file_path: str, start_line: Optional[int] = None, end_line: Optional[int] = None) -> str:
     """
     Read file content, optionally only specific lines.
@@ -46,15 +42,3 @@ def read_file(file_path: str, start_line: Optional[int] = None, end_line: Option
         return f"Error: Permission denied for '{file_path}'"
     except Exception as e:
         return f"Error reading file: {str(e)}"
-
-if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python read_file.py <file_path> [start_line] [end_line]")
-        sys.exit(1)
-    
-    file_path = sys.argv[1]
-    start_line = int(sys.argv[2]) if len(sys.argv) > 2 else None
-    end_line = int(sys.argv[3]) if len(sys.argv) > 3 else None
-    
-    result = read_file(file_path, start_line, end_line)
-    print(result)

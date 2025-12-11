@@ -4,6 +4,9 @@ from tools.run_shell import run_shell
 from tools.web_scraper import web_scrape
 from tools.search_memory import search_memory
 from tools.get_tool_calls import get_tool_calls
+from tools.read_file import read_file
+from tools.write_file import write_file
+from tools.apply_patch import apply_patch
 
 tools = [
     Tool(
@@ -30,6 +33,20 @@ tools = [
         name="get_tool_calls",
         func=get_tool_calls,
         description="Get all tool calls (input/output) for a specific request ID. Use this to see what tools were executed and their results for a particular request. Parameter: request_id (the request ID to fetch tool calls for)."
+    ),
+    Tool(
+        name="read_file",
+        func=read_file,
+        description="Read file content. Can read entire file or specific line ranges. Parameters: file_path (path to file), start_line (optional, 0-indexed), end_line (optional, 0-indexed)."
+    ),
+    Tool(
+        name="write_file",
+        func=write_file,
+        description="Write content to a file. Creates directories if needed. Parameters: file_path (path to file), content (content to write), append (optional, default False - if True appends instead of overwriting)."
+    ),
+    Tool(
+        name="apply_patch",
+        func=apply_patch,
+        description="Apply a unified diff patch to a file. Parameters: diff_content (unified diff format), target_file (optional - file to patch, if not specified in diff)."
     )
 ]
-
