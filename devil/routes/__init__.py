@@ -52,6 +52,23 @@ def get_sessions():
         raise HTTPException(status_code=500, detail=str(e))
 
 
+@router.get("/api/v1/tool-calls/{request_id}")
+def get_tool_calls(request_id: str):
+    """Get all tool calls for a specific request ID"""
+    try:
+        from storage import memory_store
+        
+        if not memory_store:
+            raise HTTPException(status_code=503, detail="Redis not available")
+        
+        tool_calls = memory_store.get_tool_calls(request_id)
+        return {"request_id": request_id, "tool_calls": tool_calls}
+    except ValueError as e:
+        raise HTTPException(status_code=503, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 @router.post("/api/v1/chat", response_model=QueryResponse)
 def ask(request: QueryRequest, x_session_id: Optional[str] = Header(None, alias="X-Session-ID")):
     """Handle user query and return agent response"""

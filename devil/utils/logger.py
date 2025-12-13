@@ -47,13 +47,9 @@ def log_tool_call(func: Callable) -> Callable:
             # Execute the tool function
             result = func(*args, **kwargs)
             
-            # Truncate result for logging if too long
             result_str = str(result)
-            if len(result_str) > 500:
-                result_str = result_str[:500] + "... (truncated)"
-            
             # Log tool end
-            logger.info(f"[TOOL END] {tool_name}: {result_str}")
+            logger.info(f"[TOOL END] {tool_name}: {result_str[:100]}(truncated)...")
             
             # Store tool call in Redis if request_id is available
             if request_id:
