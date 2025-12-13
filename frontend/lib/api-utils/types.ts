@@ -32,3 +32,15 @@ export interface HistoryResponse {
   session_id: string
 }
 
+export interface ToolCall {
+  tool_name: string
+  input: string
+  output: string
+  timestamp: string
+}
+
+export interface ToolCallsResponse {
+  request_id: string
+  tool_calls: ToolCall[]
+}
+

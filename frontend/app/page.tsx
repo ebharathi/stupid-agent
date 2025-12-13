@@ -206,7 +206,7 @@ export default function Home() {
         </div>
         
         {/* Chat input at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 z-20">
+        <div className="absolute bottom-0 left-0 right-0 z-20 bg-background/95 backdrop-blur-sm ">
           <div className="max-w-4xl mx-auto px-4 py-4">
             <ChatInput onSend={handleSendMessage} disabled={isLoading} />
           </div>

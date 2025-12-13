@@ -3,6 +3,8 @@
 import { Message } from '@/types'
 import { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
+import { getToolCalls, ToolCall } from '@/lib/api-utils'
+import ToolCalls from './ToolCalls'
 
 interface ChatMessageProps {
   message: Message
@@ -10,11 +12,34 @@ interface ChatMessageProps {
 
 export default function ChatMessage({ message }: ChatMessageProps) {
   const [isCopied, setIsCopied] = useState(false)
+  const [showLogs, setShowLogs] = useState(false)
+  const [toolCalls, setToolCalls] = useState<ToolCall[]>([])
+  const [loadingLogs, setLoadingLogs] = useState(false)
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(message.content)
     setIsCopied(true)
     setTimeout(() => setIsCopied(false), 2000)
+  }
+
+  const handleSeeLogs = async () => {
+    if (!message.requestId) return
+    
+    if (showLogs) {
+      setShowLogs(false)
+      return
+    }
+
+    setLoadingLogs(true)
+    try {
+      const data = await getToolCalls(message.requestId)
+      setToolCalls(data.tool_calls)
+      setShowLogs(true)
+    } catch (error) {
+      console.error('Failed to fetch tool calls:', error)
+    } finally {
+      setLoadingLogs(false)
+    }
   }
 
   if (message.role === 'user') {
@@ -145,11 +170,21 @@ export default function ChatMessage({ message }: ChatMessageProps) {
             </button>
 
             {message.requestId && (
-              <span className="text-xs text-muted-foreground">
-                ID: {message.requestId}
-              </span>
+              <button
+                onClick={handleSeeLogs}
+                disabled={loadingLogs}
+                className="text-xs text-muted-foreground hover:text-foreground transition-colors disabled:opacity-50"
+              >
+                {loadingLogs ? 'Loading...' : showLogs ? 'Hide logs' : 'See logs'}
+              </button>
             )}
           </div>
+
+          {showLogs && message.requestId && (
+            <div className="mt-2 px-2">
+              <ToolCalls toolCalls={toolCalls} requestId={message.requestId} />
+            </div>
+          )}
         </div>
       </div>
     </div>
