@@ -1,7 +1,7 @@
 import { Terminal, Github, Twitter, Linkedin, Mail, Shield, Code, Cpu, Brain } from 'lucide-react'
 
 const socialLinks = [
-  { icon: Github, label: 'GitHub', href: 'https://github.com/devil-ai/agent' },
+  { icon: Github, label: 'GitHub', href: 'https://github.com/ebharathi/devil.ai' },
   { icon: Twitter, label: 'Twitter', href: 'https://twitter.com/devil-ai' },
   { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/company/devil-ai' },
   { icon: Mail, label: 'Email', href: 'mailto:contact@devil-ai.com' },
@@ -51,18 +51,18 @@ export default function Footer() {
               <h3 className="text-lg font-semibold mb-6 text-gray-100">Project</h3>
               <ul className="space-y-3">
                 <li><a href="#demo" className="text-gray-400 hover:text-primary transition-colors">Live Demo</a></li>
-                <li><a href="https://github.com/devil-ai/agent" className="text-gray-400 hover:text-primary transition-colors">GitHub Repo</a></li>
-                <li><a href="https://github.com/devil-ai/agent" className="text-gray-400 hover:text-primary transition-colors">Documentation</a></li>
+                <li><a href="https://github.com/ebharathi/devil.ai" className="text-gray-400 hover:text-primary transition-colors">GitHub Repo</a></li>
+                <li><a href="https://github.com/ebharathi/devil.ai" className="text-gray-400 hover:text-primary transition-colors">Documentation</a></li>
                 <li><a href="#features" className="text-gray-400 hover:text-primary transition-colors">Features</a></li>
               </ul>
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-6 text-gray-100">Open Source</h3>
               <ul className="space-y-3">
-                <li><a href="https://github.com/devil-ai/agent/blob/main/LICENSE" className="text-gray-400 hover:text-primary transition-colors">MIT License</a></li>
-                <li><a href="https://github.com/devil-ai/agent/issues" className="text-gray-400 hover:text-primary transition-colors">Issues</a></li>
-                <li><a href="https://github.com/devil-ai/agent/pulls" className="text-gray-400 hover:text-primary transition-colors">Contribute</a></li>
-                <li><a href="https://github.com/devil-ai/agent/stargazers" className="text-gray-400 hover:text-primary transition-colors">Stars</a></li>
+                <li><a href="https://github.com/ebharathi/devil.ai/blob/main/LICENSE" className="text-gray-400 hover:text-primary transition-colors">MIT License</a></li>
+                <li><a href="https://github.com/ebharathi/devil.ai/issues" className="text-gray-400 hover:text-primary transition-colors">Issues</a></li>
+                <li><a href="https://github.com/ebharathi/devil.ai/pulls" className="text-gray-400 hover:text-primary transition-colors">Contribute</a></li>
+                <li><a href="https://github.com/ebharathi/devil.ai/stargazers" className="text-gray-400 hover:text-primary transition-colors">Stars</a></li>
               </ul>
             </div>
           </div>

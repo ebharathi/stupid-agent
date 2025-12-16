@@ -196,7 +196,7 @@ export default function Hero() {
               transition={{ delay: 0.7 }}
             >
               <a 
-                href="https://github.com/devil-ai/agent"
+                href="https://github.com/ebharathi/devil.ai"
                 className="group px-8 py-4 bg-primary hover:bg-primary-dark rounded-xl font-bold text-lg transition-all duration-200 hover:scale-105 active:scale-95 flex items-center justify-center space-x-3 relative overflow-hidden glow"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/10 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>

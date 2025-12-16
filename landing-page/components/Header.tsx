@@ -19,7 +19,7 @@ export default function Header() {
   const navItems = [
     { label: 'DEMO', href: '#demo', icon: Zap },
     { label: 'FEATURES', href: '#features', icon: Code },
-    { label: 'GITHUB', href: 'https://github.com/devil-ai/agent', icon: Github },
+    { label: 'GITHUB', href: 'https://github.com/ebharathi/devil.ai', icon: Github },
   ]
 
   return (
@@ -48,7 +48,7 @@ export default function Header() {
               <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping opacity-75"></div>
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold gradient-text tracking-tight">DEVIL AI AGENT</span>
+              <span className="text-xl font-bold gradient-text tracking-tight">DEVIL.AI</span>
               <div className="flex items-center space-x-2">
                 <Skull className="w-3 h-3 text-red-500" />
                 <span className="text-xs text-gray-400 font-mono tracking-wider">NO RESTRICTIONS</span>
@@ -84,7 +84,7 @@ export default function Header() {
             
             {/* GitHub Button - INSANE */}
             <motion.a 
-              href="https://github.com/devil-ai/agent"
+              href="https://github.com/ebharathi/devil.ai"
               className="group relative px-6 py-3 bg-primary hover:bg-primary-dark rounded-xl font-bold transition-all duration-200 hover:scale-105 active:scale-95 overflow-hidden glow"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -162,7 +162,7 @@ export default function Header() {
                 
                 {/* GitHub Button Mobile */}
                 <motion.a 
-                  href="https://github.com/devil-ai/agent"
+                  href="https://github.com/ebharathi/devil.ai"
                   className="group px-4 py-4 bg-primary hover:bg-primary-dark rounded-xl font-bold transition-all duration-200 text-center relative overflow-hidden glow"
                   initial={{ scale: 0.9, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}

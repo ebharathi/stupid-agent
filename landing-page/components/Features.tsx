@@ -227,7 +227,7 @@ export default function Features() {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a 
-                    href="https://github.com/devil-ai/agent"
+                    href="https://github.com/ebharathi/devil.ai"
                     className="group px-8 py-4 bg-green-500/20 hover:bg-green-500/30 border border-green-500/30 hover:border-green-500/50 rounded-xl font-bold transition-all duration-200 hover:scale-105 active:scale-95 flex items-center space-x-3 relative overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-green-500/0 via-white/10 to-green-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
@@ -260,25 +260,7 @@ export default function Features() {
           </div>
         </motion.div>
 
-        {/* Warning Notice */}
-        <motion.div 
-          className="mt-8 p-6 bg-red-500/10 border border-red-500/20 rounded-xl max-w-3xl mx-auto"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          <div className="flex items-start space-x-3">
-            <AlertTriangle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
-            <div>
-              <h4 className="font-bold text-red-500 mb-2">⚠️ SECURITY WARNING</h4>
-              <p className="text-sm text-gray-300">
-                This AI agent has <span className="text-red-500 font-bold">no safety restrictions</span> and can perform 
-                any action on your system. Only run in isolated environments. The developers are not responsible 
-                for any damage caused by this software.
-              </p>
-            </div>
-          </div>
-        </motion.div>
+    
       </div>
     </section>
   )
