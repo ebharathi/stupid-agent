@@ -2,7 +2,6 @@ import { Shield, Cpu, Terminal, Zap, Lock, Globe, Code, Server, Database, Networ
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import Features from '@/components/Features'
-import Demo from '@/components/Demo'
 import Footer from '@/components/Footer'
 import ParticleBackground from '@/components/ParticleBackground'
 import MatrixRain from '@/components/MatrixRain'
@@ -41,7 +40,6 @@ export default function Home() {
         <Header />
         <Hero />
         <Features />
-        <Demo />
         <Footer />
       </div>
 
