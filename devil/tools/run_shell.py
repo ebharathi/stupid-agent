@@ -10,7 +10,7 @@ def run_shell(command: str):
             shell=True, 
             capture_output=True, 
             text=True,
-            timeout=300  # 5 minutes timeout
+            timeout=60  # 1 minute timeout
         )
         return result.stdout or result.stderr
     except Exception as e:
